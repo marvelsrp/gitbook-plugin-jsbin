@@ -1,22 +1,22 @@
-# gitbook-plugin-codepen
+# gitbook-plugin-jsbin
 
-[![Build Status](https://travis-ci.org/LingyuCoder/gitbook-plugin-codepen.png)](https://travis-ci.org/LingyuCoder/gitbook-plugin-codepen)
-[![Dependency Status](https://david-dm.org/LingyuCoder/gitbook-plugin-codepen.svg)](https://david-dm.org/LingyuCoder/gitbook-plugin-codepen)
-[![devDependency Status](https://david-dm.org/LingyuCoder/gitbook-plugin-codepen/dev-status.svg)](https://david-dm.org/LingyuCoder/gitbook-plugin-codepen#info=devDependencies)
-[![NPM version](http://img.shields.io/npm/v/gitbook-plugin-codepen.svg?style=flat-square)](http://npmjs.org/package/gitbook-plugin-codepen)
+[![Dependency Status](https://david-dm.org/mikeumus/gitbook-plugin-jsbin.svg)](https://david-dm.org/LingyuCoder/gitbook-plugin-codepen)
+[![devDependency Status](https://david-dm.org/mikeumus/gitbook-plugin-jsbin/dev-status.svg)](https://david-dm.org/LingyuCoder/gitbook-plugin-codepen#info=devDependencies)
+[![NPM version](http://img.shields.io/npm/v/gitbook-plugin-jsbin.svg?style=flat-square)](http://npmjs.org/package/gitbook-plugin-codepen)
 [![node](https://img.shields.io/badge/node.js-%3E=_0.12-green.svg?style=flat-square)](http://nodejs.org/download/)
-[![License](http://img.shields.io/npm/l/gitbook-plugin-codepen.svg?style=flat-square)](LICENSE)
-[![npm download](https://img.shields.io/npm/dm/gitbook-plugin-codepen.svg?style=flat-square)](https://npmjs.org/package/gitbook-plugin-codepen)
+[![License](http://img.shields.io/npm/l/gitbook-plugin-jsbin.svg?style=flat-square)](LICENSE)
+[![npm download](https://img.shields.io/npm/dm/gitbook-plugin-jsbin.svg?style=flat-square)](https://npmjs.org/package/gitbook-plugin-codepen)
 
+Forked from [github.com/ly-tools/gitbook-plugin-codepen](https://github.com/ly-tools/gitbook-plugin-codepen)
 
-**Embed Codepen preview into your Gitbook**
+**Embed JS Bin preview into your Gitbook.**
 
-[DEMO](http://read.lingyu.wang/Codepen.html)
+<!--[DEMO](http://read.lingyu.wang/Codepen.html)-->
 
 ## Install
 
 ```shell
-$npm install --save gitbook-plugin-codepen
+$npm install --save gitbook-plugin-jsbin
 ```
 
 ## Usage
@@ -25,14 +25,14 @@ Add the plugin to your `book.json` like this:
 
 ```javascript
 {
-    "plugins": ["codepen"]
+    "plugins": ["jsbin"]
 }
 ```
 
-then in your markdown file, you can embed codepen panel like this:
+then in your markdown file, you can embed jsbin panel like this:
 
 ```markdown
-[](codepen://Lingyucoder/AsFJh?height=800&theme=0)
+[](jsbin://AsFJh/1/embed?jsTab=js,&consoleTab=console)
 ```
 
 ## Options
@@ -41,38 +41,49 @@ You can set the options of your Gitbook in `book.json` like this:
 
 ```javascript
 "pluginsConfig": {
-    "codepen": {
-      "height": 400,
-      "theme": 14038,
-      "description": "somepen",
-      "defaultTab": 'html'
+    "jsbin": {
+      "snapshot": 1,
+      "htmlTab": 'html,', 
+      "cssTab": 'css,', 
+      "jsTab": 'js,',
+      "consoleTab": 'console,',
+      "outputTab": 'output' 
     }
 }
 ```
 
-You can also set options of a specific Codepen panel use URL querystring like `?height=400&theme=14038&description=somepen&defaultTab=html`
+You can also set options of a specific JS Bin panel use URL querystring like `1/embed?htmlTab=html,&cssTab=css,&jsTab=js,&consoleTab=console,&outputTab=output`
 
-### height
+### snapshot
 
-default: `300`
+snapshot: `1`
 
-### theme
+### htmlTab
 
-default: `0`
+htmlTab: `'html',`
 
-### description
+### cssTab
 
-default: `''`
+cssTab: `'css,'`
 
-### defaultTab
+### jsTab
 
-default: `'result'`
+jsTab: `'js,'`
+
+### consoleTab
+
+consoleTab: `'console,'`
+
+### outputTab
+
+outputTab: `'output,'`
+
 
 ##License
 
 The MIT License (MIT)
 
-Copyright (c) 2015 Lingyu Wang
+Copyright (c) 2016 Michael Duane Mooring
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
